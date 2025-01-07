@@ -105,11 +105,7 @@ app.use(routes);
 app.use(express.static(path.join(__dirname, "../client/build")));
 
 app.get("*", (req, res) => {
-<<<<<<< HEAD
   res.sendFile(path.resolve(__dirname, "../client/build", "index.html"));
-=======
-  res.sendFile(path.resolve(__dirname, "build", "index.html"));
->>>>>>> 42537b2b771325785dc11a9cc3825eee494a9247
 });
 // 2) 404 Urls
 // app.all("*", (req, res, next) => {
