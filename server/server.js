@@ -14,6 +14,8 @@ connectToDB();
 
 //______SERVER______//
 const PORT = process.env.PORT || 4000;
+console.log(process.env.NODE_ENV);
+
 const server = app.listen(PORT, () => {
   console.log(
     `App Running on PORT:${PORT} in ${process.env.NODE_ENV} mode`.blue.bold

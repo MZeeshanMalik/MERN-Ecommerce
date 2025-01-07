@@ -26,10 +26,19 @@ const app = express();
 app.use(cors());
 app.options("*", cors());
 
+app.use((req, res, next) => {
+  res.setHeader(
+    "Content-Security-Policy",
+    "default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://fonts.gstatic.com; font-src 'self' https://fonts.gstatic.com;"
+  );
+  next();
+});
+
 //_________SERVE_STATIC_FILES_________//
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 app.use(express.static(path.join(__dirname, "../uploads")));
+app.use(express.static(path.join(__dirname, "./build")));
 
 //_________STRIPE_WEBHOOK_________//
 app.post(
@@ -96,7 +105,11 @@ app.use(routes);
 app.use(express.static(path.join(__dirname, "../client/build")));
 
 app.get("*", (req, res) => {
+<<<<<<< HEAD
   res.sendFile(path.resolve(__dirname, "../client/build", "index.html"));
+=======
+  res.sendFile(path.resolve(__dirname, "build", "index.html"));
+>>>>>>> 42537b2b771325785dc11a9cc3825eee494a9247
 });
 // 2) 404 Urls
 // app.all("*", (req, res, next) => {
