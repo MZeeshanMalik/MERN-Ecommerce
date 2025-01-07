@@ -1,8 +1,10 @@
 # MERN-Ecommerce
+
 Ecommerce website has full CRUD operations of products, categories, orders, users ...etc , authentication &amp; authorization , img uploading, stripe or cash payment and much more.
 
 ## Tech
-- React 
+
+- React
 - ReduxToolkit
 - Reactstrap, Styled Components
 - Formik, Yup
@@ -11,9 +13,10 @@ Ecommerce website has full CRUD operations of products, categories, orders, user
 - Mongoose
 - JsonWebToken
 - Express Validator
-and much more ...
+  and much more ...
 
 ## Featuers
+
 - Good folders structure
 - Reusable components
 - State management by ReduxToolkit
@@ -24,10 +27,8 @@ and much more ...
 - Payment by stripe or can pay cash on delivery
 - JWT Authentication, Authorization
 
-## API Reference
-[API reference](https://documenter.getpostman.com/view/22360984/2s93Jut2tg)
-
 ## ENV
+
 To run this project, you will need to add the following environment variables to your .env file
 
 `PORT`
@@ -44,5 +45,6 @@ To run this project, you will need to add the following environment variables to
 `STRIPE_SECRET_KEY`
 `STRIPE_WEBHOOK_SECRET`
 
-## Demo
-You can see app from [HERE](https://youtu.be/psp6Ojz_BDE)
+## Thanks
+
+Thanks for visiting 😊😊😊😊😊😊

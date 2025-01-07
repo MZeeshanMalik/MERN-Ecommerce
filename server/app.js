@@ -92,14 +92,16 @@ app.use(
 // 1) App Routes
 app.use(routes);
 
-app.use(express.static("./client/build"));
+// Serve static files from the React app
+app.use(express.static(path.join(__dirname, "../client/build")));
+
 app.get("*", (req, res) => {
-  res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
+  res.sendFile(path.resolve(__dirname, "../client/build", "index.html"));
 });
 // 2) 404 Urls
-app.all("*", (req, res, next) => {
-  next(new APIError(`Can't find ${req.originalUrl} on this server!`, 404));
-});
+// app.all("*", (req, res, next) => {
+//   next(new APIError(`Can't find ${req.originalUrl} on this server!`, 404));
+// });
 
 //_________GLOBAL_ERROR_MIDDLEWARE_________//
 app.use(GlobalErrorMiddleware);
